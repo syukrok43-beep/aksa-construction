@@ -5,16 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>AKSA Konstruksi • Membangun Negeri dengan Presisi</title>
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
-    
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     
     <script>
@@ -46,7 +39,6 @@
 </head>
 <body class="bg-primary-white text-primary-dark font-sans min-h-screen flex flex-col">
 
-    <!-- TOP BAR -->
     <div class="bg-primary-dark text-gray-300 text-xs py-2.5 px-4 border-b border-gray-700/30 hidden md:block">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-6">
@@ -59,25 +51,19 @@
         </div>
     </div>
 
-    <!-- MAIN NAVIGATION -->
     <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <!-- Logo -->
                 <div class="flex items-center cursor-pointer" onclick="switchTab('beranda')">
-    <div class="flex items-center space-x-3">
-        <!-- Logo Image -->
-     <img src="aksa-removebg-preview.png" alt="AKSA Konstruksi" class="h-16 w-auto">
-        
-        <!-- Optional: Tetap tampilkan teks di samping logo -->
-        <div class="h-5 w-px bg-gray-300 mx-1 hidden md:block"></div>
-        <div class="text-[10px] uppercase tracking-[0.25em] font-medium text-gray-500 leading-tight hidden md:block">
-            Aksamala<br>Karsa Pinusa
-        </div>
-    </div>
-</div>
+                    <div class="flex items-center space-x-3">
+                        <img src="aksa-removebg-preview.png" alt="AKSA Konstruksi" class="h-16 w-auto">
+                        <div class="h-5 w-px bg-gray-300 mx-1 hidden md:block"></div>
+                        <div class="text-[10px] uppercase tracking-[0.25em] font-medium text-gray-500 leading-tight hidden md:block">
+                            Aksamala<br>Karsa Pinusa
+                        </div>
+                    </div>
+                </div>
 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-10 items-center">
                     <button onclick="switchTab('beranda')" id="nav-beranda" class="nav-btn px-1 py-2 text-sm font-medium text-accent-gold border-b-2 border-accent-gold transition-all duration-300 tracking-wide">
                         BERANDA
@@ -93,7 +79,6 @@
                     </a>
                 </div>
 
-                <!-- Mobile button -->
                 <div class="flex items-center md:hidden">
                     <button id="mobile-menu-btn" class="text-primary-dark p-2 rounded-md" aria-label="Menu">
                         <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
@@ -102,28 +87,18 @@
             </div>
         </div>
 
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-2 shadow-lg">
-            <button onclick="switchTab('beranda')" id="mob-nav-beranda" class="mob-nav-btn block w-full text-left px-4 py-3 text-sm font-medium text-accent-gold bg-gray-50">
-                Beranda
-            </button>
-            <button onclick="switchTab('layanan')" id="mob-nav-layanan" class="mob-nav-btn block w-full text-left px-4 py-3 text-sm font-medium text-gray-700">
-                Layanan
-            </button>
-            <button onclick="switchTab('tentang')" id="mob-nav-tentang" class="mob-nav-btn block w-full text-left px-4 py-3 text-sm font-medium text-gray-700">
-                Tentang Kami
-            </button>
+            <button onclick="switchTab('beranda')" id="mob-nav-beranda" class="mob-nav-btn block w-full text-left px-4 py-3 text-sm font-medium text-accent-gold bg-gray-50">Beranda</button>
+            <button onclick="switchTab('layanan')" id="mob-nav-layanan" class="mob-nav-btn block w-full text-left px-4 py-3 text-sm font-medium text-gray-700">Layanan</button>
+            <button onclick="switchTab('tentang')" id="mob-nav-tentang" class="mob-nav-btn block w-full text-left px-4 py-3 text-sm font-medium text-gray-700">Tentang Kami</button>
             <a href="#hubungi-kami" class="block w-full text-center bg-primary-dark text-white text-xs font-semibold py-3 uppercase tracking-widest" onclick="closeMobileMenu()">Konsultasi Gratis</a>
         </div>
     </nav>
 
-    <!-- MAIN CONTENT -->
     <main class="flex-grow">
 
-        <!-- TAB 1: BERANDA -->
         <div id="tab-beranda" class="tab-content active">
             
-            <!-- Hero Section -->
             <section class="relative bg-primary-dark text-white overflow-hidden" style="min-height: 85vh;">
                 <div class="absolute inset-0">
                     <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85" alt="Arsitektur modern minimalis" class="w-full h-full object-cover opacity-70">
@@ -153,7 +128,6 @@
                 </div>
             </section>
 
-            <!-- Proses Kerja Section -->
             <section class="py-20 bg-white grid-bg">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex flex-col md:flex-row md:items-end justify-between mb-14">
@@ -166,48 +140,49 @@
                         </p>
                     </div>
 
-                    <!-- Grid Proses Kerja -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <!-- Tahap 1 -->
                         <div class="group relative overflow-hidden aspect-[4/5] md:aspect-[3/4] bg-gray-100">
                             <img src="https://images.unsplash.com/photo-1664575602554-2087b04935a5?auto=format&fit=crop&w=600&q=85" alt="Konsultasi proyek" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
                                 <span class="text-accent-gold text-xs uppercase tracking-widest font-semibold mb-2">Tahap 1</span>
                                 <h4 class="text-white text-xl font-semibold">Konsultasi & Survei</h4>
-                                <p class="text-gray-300 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    Mendengarkan kebutuhan, survei lokasi, dan menyusun rencana awal proyek bersama tim ahli.
-                                </p>
+                                <div class="border border-accent-gold/50 bg-black/50 p-3 mt-2 rounded">
+                                    <p class="text-gray-300 text-sm">
+                                        Mendengarkan kebutuhan, survei lokasi, dan menyusun rencana awal proyek bersama tim ahli.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- Tahap 2 -->
                         <div class="group relative overflow-hidden aspect-[4/5] md:aspect-[3/4] bg-gray-100">
                             <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=85" alt="Desain dan engineering" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
                                 <span class="text-accent-gold text-xs uppercase tracking-widest font-semibold mb-2">Tahap 2</span>
                                 <h4 class="text-white text-xl font-semibold">Desain & Perencanaan</h4>
-                                <p class="text-gray-300 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    Pembuatan gambar kerja, RAB detail, dan perencanaan teknis yang presisi sesuai standar.
-                                </p>
+                                <div class="border border-accent-gold/50 bg-black/50 p-3 mt-2 rounded">
+                                    <p class="text-gray-300 text-sm">
+                                        Pembuatan gambar kerja, RAB detail, dan perencanaan teknis yang presisi sesuai standar.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- Tahap 3 -->
                         <div class="group relative overflow-hidden aspect-[4/5] md:aspect-[3/4] bg-gray-100">
                             <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=85" alt="Pelaksanaan konstruksi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
                                 <span class="text-accent-gold text-xs uppercase tracking-widest font-semibold mb-2">Tahap 3</span>
                                 <h4 class="text-white text-xl font-semibold">Eksekusi & Serah Terima</h4>
-                                <p class="text-gray-300 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    Pelaksanaan konstruksi dengan pengawasan ketat, quality control, dan serah terima tepat waktu.
-                                </p>
+                                <div class="border border-accent-gold/50 bg-black/50 p-3 mt-2 rounded">
+                                    <p class="text-gray-300 text-sm">
+                                        Pelaksanaan konstruksi dengan pengawasan ketat, quality control, dan serah terima tepat waktu.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Detail Proses -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                        <div class="text-center md:text-left space-y-3">
+                        <div class="text-center md:text-left space-y-3 border border-gray-200 p-6 rounded-lg hover:border-accent-gold transition-all duration-300">
                             <div class="flex items-center justify-center md:justify-start space-x-3">
                                 <span class="w-8 h-8 bg-accent-gold text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
                                 <h3 class="font-bold text-lg text-primary-dark">Konsultasi Awal</h3>
@@ -222,7 +197,7 @@
                             </ul>
                         </div>
                         
-                        <div class="text-center md:text-left space-y-3">
+                        <div class="text-center md:text-left space-y-3 border border-gray-200 p-6 rounded-lg hover:border-accent-gold transition-all duration-300">
                             <div class="flex items-center justify-center md:justify-start space-x-3">
                                 <span class="w-8 h-8 bg-accent-gold text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                                 <h3 class="font-bold text-lg text-primary-dark">Perencanaan Detail</h3>
@@ -237,7 +212,7 @@
                             </ul>
                         </div>
                         
-                        <div class="text-center md:text-left space-y-3">
+                        <div class="text-center md:text-left space-y-3 border border-gray-200 p-6 rounded-lg hover:border-accent-gold transition-all duration-300">
                             <div class="flex items-center justify-center md:justify-start space-x-3">
                                 <span class="w-8 h-8 bg-accent-gold text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
                                 <h3 class="font-bold text-lg text-primary-dark">Pelaksanaan</h3>
@@ -255,7 +230,6 @@
                 </div>
             </section>
 
-            <!-- Nilai & Filosofi -->
             <section class="py-20 bg-primary-light">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-12">
@@ -281,9 +255,72 @@
                     </div>
                 </div>
             </section>
+
+            <!-- TESTIMONI PELANGGAN -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <span class="text-accent-gold font-semibold text-xs uppercase tracking-[0.3em]">Testimoni</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-primary-dark mt-3">APA KATA KLIEN KAMI?</h2>
+                        <div class="w-16 h-0.5 bg-accent-gold mx-auto mt-4"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="border border-gray-200 p-8 rounded-lg hover:shadow-lg transition-all duration-300">
+                            <div class="flex items-center mb-4">
+                                <i class="fa-solid fa-star text-accent-gold"></i>
+                                <i class="fa-solid fa-star text-accent-gold"></i>
+                                <i class="fa-solid fa-star text-accent-gold"></i>
+                                <i class="fa-solid fa-star text-accent-gold"></i>
+                                <i class="fa-solid fa-star text-accent-gold"></i>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                "Pengerjaan tepat waktu dan hasilnya sangat memuaskan. Tim AKSA sangat profesional dalam menangani proyek renovasi rumah saya."
+                            </p>
+                            <div class="border-t border-gray-200 pt-4">
+                                <p class="font-bold text-primary-dark">Bapak Sutrisno</p>
+                                <p class="text-xs text-gray-500">Renovasi Rumah Tinggal - Wates</p>
+                            </div>
+                        </div>
+
+                        <div class="border border-gray-200 p-8 rounded-lg hover:shadow-lg transition-all duration-300">
+                            <div class="flex items-center mb-4">
+                                <i class="fa-solid fa-star text-accent-gold"></i>
+                                <i class="fa-solid fa-star text-accent-gold"></i>
+                                <i class="fa-solid fa-star text-accent-gold"></i>
+                                <i class="fa-solid fa-star text-accent-gold"></i>
+                                <i class="fa-solid fa-star text-accent-gold"></i>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                "Desain interior yang dibuat sangat sesuai dengan keinginan kami. Konsultasinya detail dan hasil akhirnya di luar ekspektasi!"
+                            </p>
+                            <div class="border-t border-gray-200 pt-4">
+                                <p class="font-bold text-primary-dark">Ibu Ratna Dewi</p>
+                                <p class="text-xs text-gray-500">Desain Interior Kafe - Sentolo</p>
+                            </div>
+                        </div>
+
+                        <div class="border border-gray-200 p-8 rounded-lg hover:shadow-lg transition-all duration-300">
+                            <div class="flex items-center mb-4">
+                                <i class="fa-solid fa-star text-accent-gold"></i>
+                                <i class="fa-solid fa-star text-accent-gold"></i>
+                                <i class="fa-solid fa-star text-accent-gold"></i>
+                                <i class="fa-solid fa-star text-accent-gold"></i>
+                                <i class="fa-solid fa-star text-accent-gold"></i>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                "Sebagai developer, saya sudah beberapa kali kerjasama dengan AKSA. Selalu tepat waktu dan kualitas material terjamin."
+                            </p>
+                            <div class="border-t border-gray-200 pt-4">
+                                <p class="font-bold text-primary-dark">Bapak Hendra Wijaya</p>
+                                <p class="text-xs text-gray-500">Pembangunan Ruko - Pengasih</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
 
-        <!-- TAB 2: LAYANAN -->
         <div id="tab-layanan" class="tab-content">
             <section class="py-20 bg-white">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -329,7 +366,6 @@
                 </div>
             </section>
 
-            <!-- Section Highlight Desain Interior -->
             <section class="py-20 bg-primary-light">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -375,7 +411,6 @@
             </section>
         </div>
 
-        <!-- TAB 3: TENTANG KAMI -->
         <div id="tab-tentang" class="tab-content">
             <section class="py-20 bg-white">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -405,7 +440,6 @@
 
     </main>
 
-    <!-- HUBUNGI KAMI -->
     <section id="hubungi-kami" class="py-20 bg-primary-dark text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -415,7 +449,7 @@
                     <p class="text-gray-400 leading-relaxed">Konsultasikan kebutuhan konstruksi dan desain interior Anda dengan tim profesional kami. Dapatkan penawaran terbaik dan survei lokasi gratis.</p>
                     <div class="space-y-4 mt-8">
                         <div class="flex items-center space-x-4"><i class="fa-solid fa-location-dot text-accent-gold"></i><span class="text-gray-300">Jl. Wates No. 88, Kulon Progo, Daerah Istimewa Yogyakarta 55651</span></div>
-                        <div class="flex items-center space-x-4"><i class="fa-solid fa-phone text-accent-gold"></i><span class="text-gray-300">+62 811 9800 4422</span></div>
+                        <div class="flex items-center space-x-4"><i class="fa-solid fa-phone text-accent-gold"></i><span class="text-gray-300">+6282214827563</span></div>
                         <div class="flex items-center space-x-4"><i class="fa-solid fa-envelope text-accent-gold"></i><span class="text-gray-300">info@aksakonstruksi.com</span></div>
                     </div>
                 </div>
@@ -452,13 +486,11 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="bg-black text-gray-400 text-sm py-12 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="text-2xl font-black text-white tracking-tighter mb-4 md:mb-0">AKSA</div>
                 
-                <!-- Social Media Icons -->
                 <div class="flex space-x-6 items-center mb-4 md:mb-0">
                     <a href="https://tiktok.com/@aksakonstruksi" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white hover:scale-110 transition-all duration-300" title="TikTok AKSA">
                         <i class="fa-brands fa-tiktok text-2xl"></i>
@@ -478,7 +510,6 @@
                 </div>
             </div>
             
-            <!-- Bottom Footer -->
             <div class="border-t border-gray-800 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
                 <div class="mb-2 md:mb-0">
                     © 2026 AKSA - Aksamala Karsa Pinusa. Seluruh hak cipta dilindungi.
@@ -492,7 +523,6 @@
         </div>
     </footer>
 
-    <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
