@@ -19,8 +19,8 @@ function closeMobileMenu() {
     menuIcon.className = 'fa-solid fa-bars text-2xl';
 }
 
-// Switch Between Tabs
-function switchTab(tabName) {
+// Switch Between Tabs (Diperbarui dengan History API)
+function switchTab(tabName, isBackAction = false) {
     // Hide all tab contents
     document.querySelectorAll('.tab-content').forEach(content => {
         content.classList.remove('active');
@@ -30,6 +30,11 @@ function switchTab(tabName) {
     const selectedTab = document.getElementById(`tab-${tabName}`);
     if (selectedTab) {
         selectedTab.classList.add('active');
+    }
+
+    // Simpan ke riwayat browser JIKA perpindahan tab BUKAN dari menekan tombol "Back"
+    if (!isBackAction) {
+        history.pushState({ tab: tabName }, "", `#${tabName}`);
     }
 
     // Update desktop navigation buttons
@@ -112,26 +117,46 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-// Initialize active tab on page load
+// Initialize active tab on page load (Diperbarui)
 document.addEventListener('DOMContentLoaded', () => {
-    // Set beranda as default active tab
-    switchTab('beranda');
+    // Membaca URL saat web pertama kali di-load (misal ada user yang share link webmu langsung ke tab layanan)
+    const initialTab = window.location.hash.replace('#', '') || 'beranda';
+    
+    // Simpan history status pertama kali
+    history.replaceState({ tab: initialTab }, "", window.location.hash || '#beranda');
+    
+    // Set tab sesuai URL atau default ke beranda
+    switchTab(initialTab, true);
     
     // Handle smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
             
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+            // Mencegah error jika href hanya berisi '#'
+            if(targetId.length > 1) {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             }
         });
     });
+});
+
+// Deteksi ketika user menekan tombol Back / Forward di browser (FITUR BARU)
+window.addEventListener('popstate', (event) => {
+    if (event.state && event.state.tab) {
+        // Kembali ke tab sebelumnya tanpa menambah riwayat baru
+        switchTab(event.state.tab, true);
+    } else {
+        // Jika kembali ke paling awal, set ke beranda
+        switchTab('beranda', true);
+    }
 });
 
 // Optional: Add loading animation
